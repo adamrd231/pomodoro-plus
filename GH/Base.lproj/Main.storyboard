@@ -112,7 +112,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <state key="normal" title="?">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.15282451920000001" green="0.55813984719999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="74f-lh-Q3b" kind="show" id="Fnp-JZ-wmA"/>
@@ -126,7 +126,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <state key="normal" title="&lt;-">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.15282451920000001" green="0.55813984719999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="SaA-Mt-Eh0" kind="show" id="yed-Sf-aKO"/>
@@ -233,7 +233,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3L-QR-QwU">
                                 <rect key="frame" x="25" y="380" width="270" height="80"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.15282451920000001" green="0.55813984719999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i3L-QR-QwU" secondAttribute="height" multiplier="27:8" id="hA7-7G-WaN"/>
                                 </constraints>
@@ -308,7 +308,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <state key="normal" title="&lt;-">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.15282451920000001" green="0.55813984719999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="please send any ideas/questions/haikus to justin@rdconcepts.design" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="34" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBp-Qi-kPq">
