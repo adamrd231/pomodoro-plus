@@ -14,6 +14,8 @@
 		66557EDC21BDCBF20056F681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66557EDA21BDCBF20056F681 /* LaunchScreen.storyboard */; };
 		66557EE421BDDDA70056F681 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66557EE321BDDDA70056F681 /* TimerViewController.swift */; };
 		66557EE621BDDEF20056F681 /* LevelOneTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66557EE521BDDEF20056F681 /* LevelOneTimer.swift */; };
+		666B34BD229E11DF0041BE57 /* LevelTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B34BC229E11DF0041BE57 /* LevelTwoViewController.swift */; };
+		666B34BF229E18050041BE57 /* LevelThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B34BE229E18050041BE57 /* LevelThreeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		66557EDD21BDCBF20056F681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66557EE321BDDDA70056F681 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		66557EE521BDDEF20056F681 /* LevelOneTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneTimer.swift; sourceTree = "<group>"; };
+		666B34BC229E11DF0041BE57 /* LevelTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoViewController.swift; sourceTree = "<group>"; };
+		666B34BE229E18050041BE57 /* LevelThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThreeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				66557EE521BDDEF20056F681 /* LevelOneTimer.swift */,
 				66557ED321BDCBF00056F681 /* LandingViewController.swift */,
 				66557EE321BDDDA70056F681 /* TimerViewController.swift */,
+				666B34BC229E11DF0041BE57 /* LevelTwoViewController.swift */,
+				666B34BE229E18050041BE57 /* LevelThreeViewController.swift */,
 				66557ED521BDCBF00056F681 /* Main.storyboard */,
 				66557ED821BDCBF20056F681 /* Assets.xcassets */,
 				66557EDA21BDCBF20056F681 /* LaunchScreen.storyboard */,
@@ -141,7 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				666B34BF229E18050041BE57 /* LevelThreeViewController.swift in Sources */,
 				66557ED421BDCBF00056F681 /* LandingViewController.swift in Sources */,
+				666B34BD229E11DF0041BE57 /* LevelTwoViewController.swift in Sources */,
 				66557EE621BDDEF20056F681 /* LevelOneTimer.swift in Sources */,
 				66557EE421BDDDA70056F681 /* TimerViewController.swift in Sources */,
 				66557ED221BDCBF00056F681 /* AppDelegate.swift in Sources */,

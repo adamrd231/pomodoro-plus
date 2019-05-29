@@ -18,8 +18,8 @@ class TimerViewController: UIViewController {
     
     // VARIABLES
     var timer = Timer()
-    
     var timerIsRunning = false
+    
     //:Mark Label Variables
     @IBOutlet weak var doneLabel: UILabel!
     
