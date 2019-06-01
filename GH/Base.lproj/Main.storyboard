@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="2042.0289855072465" y="33.423913043478265"/>
         </scene>
-        <!--Level Two View Controller-->
+        <!--Level 2-->
         <scene sceneID="r7Y-C8-ls6">
             <objects>
                 <viewController id="gYE-Am-ngb" customClass="LevelTwoViewController" customModule="GH" customModuleProvider="target" sceneMemberID="viewController">
@@ -317,6 +317,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tyy-lv-A2m"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Level 2" id="xVo-PZ-ZQW">
+                        <barButtonItem key="rightBarButtonItem" title="?" id="QyC-Fv-Ord">
+                            <connections>
+                                <segue destination="74f-lh-Q3b" kind="show" id="6qL-2f-Hyt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="firstOffTimer" destination="bZs-hw-9u9" id="u8n-SQ-BNZ"/>
                         <outlet property="firstTimer" destination="kDC-Jt-45b" id="sMb-1P-bst"/>
@@ -335,7 +342,7 @@
             </objects>
             <point key="canvasLocation" x="2844.9275362318845" y="32.608695652173914"/>
         </scene>
-        <!--Level Three View Controller-->
+        <!--Level 3-->
         <scene sceneID="W4B-Ml-4mc">
             <objects>
                 <viewController id="AoF-sg-dF3" customClass="LevelThreeViewController" customModule="GH" customModuleProvider="target" sceneMemberID="viewController">
@@ -621,6 +628,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vjN-vP-7wL"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Level 3" id="pya-IP-oXA">
+                        <barButtonItem key="rightBarButtonItem" title="?" id="6rH-rD-QzF">
+                            <connections>
+                                <segue destination="74f-lh-Q3b" kind="show" id="lND-kT-03R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="firstOffTimer" destination="AFA-Wd-9pJ" id="8gZ-SS-wNN"/>
                         <outlet property="firstTimer" destination="RIs-vq-oUz" id="JhJ-Pq-hSO"/>
@@ -643,7 +657,7 @@
             </objects>
             <point key="canvasLocation" x="2844.375" y="753.75"/>
         </scene>
-        <!--Timer View Controller-->
+        <!--Level 1-->
         <scene sceneID="62P-vw-ED0">
             <objects>
                 <viewController id="Tfc-NM-fQR" customClass="TimerViewController" customModule="GH" customModuleProvider="target" sceneMemberID="viewController">
@@ -784,7 +798,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MLl-dp-dS4"/>
                     </view>
-                    <navigationItem key="navigationItem" id="euV-vU-JHa"/>
+                    <navigationItem key="navigationItem" title="Level 1" id="JxQ-Go-rlW">
+                        <barButtonItem key="rightBarButtonItem" title="?" id="iUE-HB-5h6">
+                            <connections>
+                                <segue destination="74f-lh-Q3b" kind="show" id="FI8-VA-oA9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="MinOffOne" destination="AL5-bq-aKL" id="EJ1-zP-xUL"/>
                         <outlet property="firstTimer" destination="tey-TM-zfQ" id="0E6-cJ-Mma"/>
@@ -858,4 +878,7 @@
             <point key="canvasLocation" x="1134.7826086956522" y="33.423913043478265"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FI8-VA-oA9"/>
+    </inferredMetricsTieBreakers>
 </document>
