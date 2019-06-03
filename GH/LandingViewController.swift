@@ -7,23 +7,27 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class LandingViewController: UITableViewController {
+class LandingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        GoogleBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        GoogleBannerView.rootViewController = self
+        GoogleBannerView.load(GADRequest())
+        
     }
-
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
+    @IBOutlet weak var GoogleBannerView: GADBannerView!
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Goofhead", for: indexPath)
-        return cell
-    }
-
 }
 
+
+// TEST TEST TEST TEST
+//ca-app-pub-3940256099942544/2934735716
+
+// GOOGLE ADMOB AD UNIT ID
+//ca-app-pub-4186253562269967/4588599313

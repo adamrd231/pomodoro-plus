@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class TimerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
+        GoogleBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        GoogleBannerView.rootViewController = self
+        GoogleBannerView.load(GADRequest())
     }
   
+    @IBOutlet weak var GoogleBannerView: GADBannerView!
     
     // VARIABLES
     var timer = Timer()
