@@ -8,15 +8,25 @@
 
 import UIKit
 import GoogleMobileAds
+import AVFoundation
+
 
 class TimerViewController: UIViewController {
-
+    
+    var audioPlayer:AVAudioPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
         GoogleBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         GoogleBannerView.rootViewController = self
         GoogleBannerView.load(GADRequest())
+        
+        guard let path = Bundle.main.path(forResource: "knock", ofType: "wav") else { return }
+        let url = URL(fileURLWithPath: path)
+        audioPlayer = try? AVAudioPlayer(contentsOf: url)
+        audioPlayer?.prepareToPlay()
+        
     }
   
     @IBOutlet weak var GoogleBannerView: GADBannerView!
@@ -43,14 +53,21 @@ class TimerViewController: UIViewController {
 
 
     // Set the pomodoro work and rest times.
-    var levelOneTime = 300
-    var levelTwoTime = 600
-    var restPeriod = 120
-
+    class LevelTimers {
+        var levelOne = 3
+        var levelTwo = 3
+        var restOne = 3
+    }
     
-    @IBAction func pressStart(_ sender: Any) {
+    var LevelTimer = LevelTimers()
+    
+    
+    var levelOneTime = 3
+    var levelTwoTime = 3
+    var restPeriod = 3
 
-        
+    //:  START
+    @IBAction func pressStart(_ sender: Any) {
         // Reset Button Functionality
         if startButton.title(for: .normal) == "RESET" {
             resetButton()
@@ -70,6 +87,8 @@ class TimerViewController: UIViewController {
         startButton.isEnabled = false
         startButton.alpha = 0.9
         startButton.setTitle("FOCUSING", for: .normal)
+        audioPlayer?.play()
+        flashWHite()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Clock), userInfo: nil, repeats: true)
     }
     
@@ -78,30 +97,46 @@ class TimerViewController: UIViewController {
         countDown()
     }
     
-    // Takes a timer and decreases by 1
-    // Updates the value of the label on iPhone
+    //var soundPlayer = AVPlayer.init(url: URL(string: "knock.wav")!)
+    
+    
+    // Main Logic for String Timers
     func countDown () {
         
         //Run the timers if not at 0
-        if levelOneTime != 0 {
+        if LevelTimer.levelOne != 0 {
             // Countdown the first timer
-            levelOneTime -= 1
-            firstTimer.text = integerToClock(number: levelOneTime)
+            LevelTimer.levelOne -= 1
+            firstTimer.text = integerToClock(number: LevelTimer.levelOne)
             
-        } else if restPeriod != 0 {
+        } else if LevelTimer.restOne != 0 {
+            if LevelTimer.restOne == 3 {
+                flashWHite()
+                audioPlayer?.play()
+                
+                // Hide the labels from the previous opperation
+                //Countdown the first rest period timer
+                labelGoAway(label: firstTimer, label2: minOnOne)
             
-            // Hide the labels from the previous opperation
-            //Countdown the first rest period timer
-            labelGoAway(label: firstTimer, label2: minOnOne)
-            restPeriod -= 1
-            offTimerOne.text = integerToClock(number: restPeriod)
+            }
+    
             
-        } else if levelTwoTime != 0 {
+            LevelTimer.restOne -= 1
+            offTimerOne.text = integerToClock(number: LevelTimer.restOne)
+            
+        } else if LevelTimer.levelTwo != 0 {
+            if LevelTimer.levelTwo == 3 {
+                audioPlayer?.play()
+                flashWHite()
+            }
             labelGoAway(label: offTimerOne, label2: MinOffOne)
-            levelTwoTime -= 1
-            secondTimer.text = integerToClock(number: levelTwoTime)
+            LevelTimer.levelTwo -= 1
+            secondTimer.text = integerToClock(number: LevelTimer.levelTwo)
             
         }  else {
+            audioPlayer?.play()
+            flashWHite()
+
             labelGoAway(label: secondTimer, label2: minOnTwo)
             timer.invalidate()
             timerIsRunning = false
@@ -110,6 +145,12 @@ class TimerViewController: UIViewController {
             startButton.setTitle("RESET", for: .normal)
         }
     }
+    
+    
+    
+    
+    
+    // Supporting Functions
     
     func resetButton () {
         resetLevelTimers()
@@ -152,9 +193,27 @@ class TimerViewController: UIViewController {
     }
     
     func resetLevelTimers () {
-        levelOneTime = 300
-        levelTwoTime = 600
-        restPeriod = 120
+        LevelTimer.levelOne = 300
+        LevelTimer.levelTwo = 600
+        LevelTimer.restOne = 120
+    }
+    
+    //screen flash
+    func flashWHite() {
+        if let wnd = self.view {
+            
+            var v = UIView(frame: wnd.bounds)
+            v.backgroundColor = UIColor.white
+            v.alpha = 0.85
+            
+            wnd.addSubview(v)
+            UIView.animate(withDuration: 1.0, animations: {
+                v.alpha = 0.0
+            }, completion: {(finished:Bool) in
+                print("Flash!")
+                v.removeFromSuperview()
+            })
+        }
     }
     
 

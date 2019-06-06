@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		66557EE621BDDEF20056F681 /* LevelOneTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66557EE521BDDEF20056F681 /* LevelOneTimer.swift */; };
 		666B34BD229E11DF0041BE57 /* LevelTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B34BC229E11DF0041BE57 /* LevelTwoViewController.swift */; };
 		666B34BF229E18050041BE57 /* LevelThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B34BE229E18050041BE57 /* LevelThreeViewController.swift */; };
+		666CCCEC22A6342500C0357B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666CCCEB22A6342500C0357B /* AVFoundation.framework */; };
+		666CCCEF22A6352F00C0357B /* S (10).wav in Resources */ = {isa = PBXBuildFile; fileRef = 666CCCEE22A6352F00C0357B /* S (10).wav */; };
+		666CCCF122A6374C00C0357B /* knock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 666CCCF022A6374C00C0357B /* knock.wav */; };
 		ABFCB3B29CF3B4F5C76A0347 /* Pods_GH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDDCF151F52604399462270 /* Pods_GH.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,9 @@
 		66557EE521BDDEF20056F681 /* LevelOneTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOneTimer.swift; sourceTree = "<group>"; };
 		666B34BC229E11DF0041BE57 /* LevelTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoViewController.swift; sourceTree = "<group>"; };
 		666B34BE229E18050041BE57 /* LevelThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThreeViewController.swift; sourceTree = "<group>"; };
+		666CCCEB22A6342500C0357B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		666CCCEE22A6352F00C0357B /* S (10).wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "S (10).wav"; sourceTree = "<group>"; };
+		666CCCF022A6374C00C0357B /* knock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = knock.wav; path = Sounds/knock.wav; sourceTree = "<group>"; };
 		AEDDCF151F52604399462270 /* Pods_GH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26EA4AAACE708859601B12D /* Pods-GH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GH.release.xcconfig"; path = "Target Support Files/Pods-GH/Pods-GH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				666CCCEC22A6342500C0357B /* AVFoundation.framework in Frameworks */,
 				ABFCB3B29CF3B4F5C76A0347 /* Pods_GH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,8 +86,18 @@
 				66557ED821BDCBF20056F681 /* Assets.xcassets */,
 				66557EDA21BDCBF20056F681 /* LaunchScreen.storyboard */,
 				66557EDD21BDCBF20056F681 /* Info.plist */,
+				666CCCF022A6374C00C0357B /* knock.wav */,
+				666CCCED22A6344400C0357B /* Sounds */,
 			);
 			path = GH;
+			sourceTree = "<group>";
+		};
+		666CCCED22A6344400C0357B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				666CCCEE22A6352F00C0357B /* S (10).wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		87D9C0778CEFA7448D4A321B /* Pods */ = {
@@ -89,13 +106,13 @@
 				150DBE981EE3B1BEF3DF9CE1 /* Pods-GH.debug.xcconfig */,
 				F26EA4AAACE708859601B12D /* Pods-GH.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		894BEB118E1A0D4DD6BFD462 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				666CCCEB22A6342500C0357B /* AVFoundation.framework */,
 				AEDDCF151F52604399462270 /* Pods_GH.framework */,
 			);
 			name = Frameworks;
@@ -135,6 +152,11 @@
 				TargetAttributes = {
 					66557ECD21BDCBF00056F681 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -163,7 +185,9 @@
 			files = (
 				66557EDC21BDCBF20056F681 /* LaunchScreen.storyboard in Resources */,
 				66557ED921BDCBF20056F681 /* Assets.xcassets in Resources */,
+				666CCCF122A6374C00C0357B /* knock.wav in Resources */,
 				66557ED721BDCBF00056F681 /* Main.storyboard in Resources */,
+				666CCCEF22A6352F00C0357B /* S (10).wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
