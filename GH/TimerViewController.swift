@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import AVFoundation
+import AVKit
 
 
 class TimerViewController: UIViewController {
@@ -18,14 +19,17 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
-        GoogleBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        var testGoogleMob = "ca-app-pub-3940256099942544/2934735716"
+        var realGoogleMob = "ca-app-pub-4186253562269967/4588599313"
+        
+        GoogleBannerView.adUnitID = testGoogleMob
         GoogleBannerView.rootViewController = self
         GoogleBannerView.load(GADRequest())
         
         guard let path = Bundle.main.path(forResource: "knock", ofType: "wav") else { return }
         let url = URL(fileURLWithPath: path)
         audioPlayer = try? AVAudioPlayer(contentsOf: url)
-        audioPlayer?.prepareToPlay()
+        
         
     }
   
@@ -54,9 +58,9 @@ class TimerViewController: UIViewController {
 
     // Set the pomodoro work and rest times.
     class LevelTimers {
-        var levelOne = 3
-        var levelTwo = 3
-        var restOne = 3
+        var levelOne = 300
+        var levelTwo = 120
+        var restOne = 600
     }
     
     var LevelTimer = LevelTimers()
@@ -110,7 +114,7 @@ class TimerViewController: UIViewController {
             firstTimer.text = integerToClock(number: LevelTimer.levelOne)
             
         } else if LevelTimer.restOne != 0 {
-            if LevelTimer.restOne == 3 {
+            if LevelTimer.restOne == 120 {
                 flashWHite()
                 audioPlayer?.play()
                 
@@ -125,7 +129,7 @@ class TimerViewController: UIViewController {
             offTimerOne.text = integerToClock(number: LevelTimer.restOne)
             
         } else if LevelTimer.levelTwo != 0 {
-            if LevelTimer.levelTwo == 3 {
+            if LevelTimer.levelTwo == 600 {
                 audioPlayer?.play()
                 flashWHite()
             }

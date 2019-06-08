@@ -15,7 +15,11 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        GoogleBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        // TEST TEST TEST TEST
+        var testGoogleMob = "ca-app-pub-3940256099942544/2934735716"
+        var realGoogleMob = "ca-app-pub-4186253562269967/4588599313"
+        
+        GoogleBannerView.adUnitID = testGoogleMob
         GoogleBannerView.rootViewController = self
         GoogleBannerView.load(GADRequest())
         
@@ -24,10 +28,3 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var GoogleBannerView: GADBannerView!
     
 }
-
-
-// TEST TEST TEST TEST
-//ca-app-pub-3940256099942544/2934735716
-
-// GOOGLE ADMOB AD UNIT ID
-//ca-app-pub-4186253562269967/4588599313

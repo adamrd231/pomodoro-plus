@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import AVKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //Set up google admob
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        //Set up audio player
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSession.Category.playback)
+        } catch {
+            print("Setting category to AVAudioSessionCategoryPlayback failed.")
+        }
+        // Other project setup
+        
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
+        
         
         return true
     }

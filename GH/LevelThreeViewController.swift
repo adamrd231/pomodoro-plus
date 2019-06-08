@@ -9,15 +9,26 @@
 
 import UIKit
 import GoogleMobileAds
+import AVKit
 
 class LevelThreeViewController: UIViewController {
+    
+    var audioPlayer:AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
-        GoogleBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        var testGoogleMob = "ca-app-pub-3940256099942544/2934735716"
+        var realGoogleMob = "ca-app-pub-4186253562269967/4588599313"
+        
+        GoogleBannerView.adUnitID = testGoogleMob
         GoogleBannerView.rootViewController = self
         GoogleBannerView.load(GADRequest())
+        
+        
+        guard let path = Bundle.main.path(forResource: "knock", ofType: "wav") else { return }
+        let url = URL(fileURLWithPath: path)
+        audioPlayer = try? AVAudioPlayer(contentsOf: url)
     }
     
     @IBOutlet weak var GoogleBannerView: GADBannerView!
@@ -138,6 +149,7 @@ class LevelThreeViewController: UIViewController {
         startButton.isEnabled = false
         startButton.alpha = 0.9
         startButton.setTitle("FOCUSING", for: .normal)
+        audioPlayer?.play()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(Clock), userInfo: nil, repeats: true)
     }
     
@@ -158,38 +170,70 @@ class LevelThreeViewController: UIViewController {
             
         } else if restPeriodOne != 0 {
             
-            // Hide the labels from the previous opperation
-            //Countdown the first rest period timer
-            labelGoAway(label: firstTimer, label2: minOnOne)
+            if restPeriodOne == 60 {
+                flashWHite()
+                audioPlayer?.play()
+                // Hide the labels from the previous opperation
+                //Countdown the first rest period timer
+                labelGoAway(label: firstTimer, label2: minOnOne)
+            }
+            
             restPeriodOne -= 1
             firstOffTimer.text = integerToClock(number: restPeriodOne)
             
         } else if levelTwoTime != 0 {
-            labelGoAway(label: firstOffTimer, label2: minOffOne)
+            if levelTwoTime == 780 {
+                flashWHite()
+                audioPlayer?.play()
+                labelGoAway(label: firstOffTimer, label2: minOffOne)
+            }
+            
             levelTwoTime -= 1
             secondTimer.text = integerToClock(number: levelTwoTime)
             
         } else if restPeriodTwo != 0 {
-            labelGoAway(label: secondTimer, label2: minOnTwo)
+            if restPeriodTwo == 120 {
+                flashWHite()
+                audioPlayer?.play()
+                labelGoAway(label: secondTimer, label2: minOnTwo)
+            }
+            
             restPeriodTwo -= 1
             secondOffTimer.text = integerToClock(number: restPeriodTwo)
             
         } else if levelThreeTime != 0 {
-            labelGoAway(label: secondOffTimer, label2: minOffTwo)
+            if levelThreeTime == 1020 {
+                flashWHite()
+                audioPlayer?.play()
+                labelGoAway(label: secondOffTimer, label2: minOffTwo)
+            }
+            
             levelThreeTime -= 1
             thirdTimer.text = integerToClock(number: levelThreeTime)
             
         } else if restPeriodThree != 0 {
-            labelGoAway(label: thirdTimer, label2: minOnThree)
+            if restPeriodThree == 300 {
+                flashWHite()
+                audioPlayer?.play()
+                labelGoAway(label: thirdTimer, label2: minOnThree)
+            }
+            
             restPeriodThree -= 1
             thirdOffTimer.text = integerToClock(number: restPeriodThree)
             
         } else if levelFourTime != 0 {
-            labelGoAway(label: thirdOffTimer, label2: minOffThree)
+            if levelFourTime == 1020 {
+                flashWHite()
+                audioPlayer?.play()
+                labelGoAway(label: thirdOffTimer, label2: minOffThree)
+            }
+           
             levelFourTime -= 1
             fourthTimer.text = integerToClock(number: levelFourTime)
             
         } else {
+            flashWHite()
+            audioPlayer?.play()
             labelGoAway(label: fourthTimer, label2: minOnFour)
             timer.invalidate()
             timerIsRunning = false
@@ -201,6 +245,26 @@ class LevelThreeViewController: UIViewController {
     
     
     
+    
+    
+    
+    //screen flash
+    func flashWHite() {
+        if let wnd = self.view {
+            
+            var v = UIView(frame: wnd.bounds)
+            v.backgroundColor = UIColor.white
+            v.alpha = 0.85
+            
+            wnd.addSubview(v)
+            UIView.animate(withDuration: 1.0, animations: {
+                v.alpha = 0.0
+            }, completion: {(finished:Bool) in
+                print("Flash!")
+                v.removeFromSuperview()
+            })
+        }
+    }
 }
 
 
