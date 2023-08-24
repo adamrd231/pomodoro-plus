@@ -15,8 +15,12 @@ struct PomodoroTimermodel {
 
 class HomeViewModel: ObservableObject {
     @Published var pomodoroTimer = PomodoroTimermodel()
-    var timer = Timer()
+
+    @Published var taskList: [Task] = []
+    @Published var newTask: String = ""
     
+    var timer = Timer()
+
     func startTimer() {
         pomodoroTimer.isTimerRunning = true
         self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in

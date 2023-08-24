@@ -1,71 +1,16 @@
-//
-//  ContentView.swift
-//  cipolla
-//
-//  Created by Adam Reed on 6/28/22.
-//
-
 import SwiftUI
 
-struct CheckboxToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        HStack {
- 
-            RoundedRectangle(cornerRadius: 5.0)
-                .stroke(lineWidth: 3)
-                .frame(width: 25, height: 25)
-                .cornerRadius(5.0)
-                .overlay {
-                    Image(systemName: configuration.isOn ? "checkmark" : "")
-                }
-                .onTapGesture {
-                    withAnimation(.spring()) {
-                        configuration.isOn.toggle()
-                    }
-                }
-            configuration.label
-        }
-    }
-}
-
-struct Task: Hashable {
-    var name: String
-    var isComplete: Bool
-}
-
-struct TimerView: View {
-    
-    let time: Double
-    
-    var body: some View {
-        HStack(spacing: .zero) {
-            Text(Int((time / 60)), format: .number)
-            Text(":")
-            if time.truncatingRemainder(dividingBy: 60) < 10 {
-                Text("0")
-            }
-            Text((time.truncatingRemainder(dividingBy: 60)), format: .number)
-           
-        }
-        .font(.largeTitle)
-    }
-}
-
 struct HomeView: View {
-    
     @StateObject var vm = HomeViewModel()
-    @State var newTask: String = ""
-    
-    @State var taskList: [Task] = []
     
     func addItemToTaskList() {
-        guard newTask != "" else { return }
+        guard vm.newTask != "" else { return }
         // Create new Task
-        let new = Task(name: newTask, isComplete: false)
+        let new = Task(name: vm.newTask, isComplete: false)
         // Append item to list
-        taskList.append(new)
+        vm.taskList.append(new)
         // clear our the input field
-        newTask = ""
+        vm.newTask = ""
     }
     
     var body: some View {
@@ -80,7 +25,7 @@ struct HomeView: View {
                
             List {
                 VStack(alignment: .center) {
-                    TextField("What's the focus?", text: $newTask)
+                    TextField("What's the focus?", text: $vm.newTask)
                     HStack {
                         Button("Add task") {
                             print("Add task to list for current pomodoro")
@@ -91,7 +36,7 @@ struct HomeView: View {
                     }
                    
                 }
-                ForEach($taskList, id: \.self, editActions: .delete) { $task in
+                ForEach($vm.taskList, id: \.self, editActions: .delete) { $task in
                     HStack {
                         Toggle("", isOn: $task.isComplete)
                             .toggleStyle(CheckboxToggleStyle())
@@ -100,7 +45,7 @@ struct HomeView: View {
                     }
                 }
                 Button("Clear list") {
-                    taskList = []
+                    vm.taskList = []
                 }
                 
             }
