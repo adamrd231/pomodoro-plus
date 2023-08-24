@@ -53,11 +53,11 @@
 		662BC1D3286B670A00768B5C /* cipolla */ = {
 			isa = PBXGroup;
 			children = (
+				6625A3162A97D1F2007348D0 /* HomeViewModel.swift */,
 				662BC1D4286B670A00768B5C /* cipollaApp.swift */,
 				662BC1D6286B670A00768B5C /* HomeView.swift */,
 				662BC1D8286B670C00768B5C /* Assets.xcassets */,
 				662BC1DA286B670C00768B5C /* Preview Content */,
-				6625A3162A97D1F2007348D0 /* HomeViewModel.swift */,
 			);
 			path = cipolla;
 			sourceTree = "<group>";
@@ -279,6 +279,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +309,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

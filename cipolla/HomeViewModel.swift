@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+struct PomodoroTimermodel {
+    var pomodoroTime: Double = 10
+    var breakTime: Double = 5
+    
+}
+
 class HomeViewModel: ObservableObject {
-    @Published var time: Double = 10
+    @Published var pomodoroTimer = PomodoroTimermodel()
 }
