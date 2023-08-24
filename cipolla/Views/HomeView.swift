@@ -19,9 +19,16 @@ struct HomeView: View {
             Text("Cipolla")
                 .font(.caption)
             
-            Text("Pomodoro / focus")
-            TimerView(time: vm.pomodoroTimer.pomodoroTime)
             
+            Text("Rounds \(vm.pomodoroTimer.rounds.description)")
+            HStack {
+                Text("Pomodoro / focus")
+                TimerView(time: vm.pomodoroTimer.pomodoroTime)
+                
+                Text("Break / rest")
+                TimerView(time: vm.pomodoroTimer.breakTime)
+            }
+           
                
             List {
                 VStack(alignment: .center) {
