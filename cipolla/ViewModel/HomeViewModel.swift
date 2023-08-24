@@ -49,6 +49,9 @@ class HomeViewModel: ObservableObject {
                 
                 guard self.pomodoroTimer.breakTime != 0 else {
                     self.pomodoroTimer.rounds -= 1
+                    guard self.pomodoroTimer.rounds != 0 else {
+                        return 
+                    }
                     self.resetTimer()
                     return
                 }

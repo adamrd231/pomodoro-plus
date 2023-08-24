@@ -59,10 +59,21 @@ struct HomeView: View {
             .frame(width: UIScreen.main.bounds.width)
             .frame(maxWidth: .infinity)
             
-            Button(vm.pomodoroTimer.isTimerRunning ?  "Pause" : "Time to focus!") {
-                print("This will start the timer")
-                vm.pomodoroTimer.isTimerRunning ? vm.pauseTimer() : vm.startTimer()
+            Button {
+                print("Something")
+                switch vm.pomodoroTimer.isTimerRunning {
+                    case .isPaused: vm.startTimer()
+                    case .isRunning: vm.pauseTimer()
+                    case .isDone: vm.totalReset()
+                }
+            } label: {
+                switch vm.pomodoroTimer.isTimerRunning {
+                    case .isPaused: Text("Timer to focus")
+                    case .isRunning: Text("Pause")
+                    case .isDone: Text("Reset")
+                }
             }
+          
         }
         .padding()
     }
