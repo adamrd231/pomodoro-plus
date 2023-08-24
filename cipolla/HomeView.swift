@@ -33,6 +33,24 @@ struct Task: Hashable {
     var isComplete: Bool
 }
 
+struct TimerView: View {
+    
+    let time: Double
+    
+    var body: some View {
+        HStack(spacing: .zero) {
+            Text(Int((time / 60)), format: .number)
+            Text(":")
+            if time.truncatingRemainder(dividingBy: 60) < 10 {
+                Text("0")
+            }
+            Text((time.truncatingRemainder(dividingBy: 60)), format: .number)
+           
+        }
+        .font(.largeTitle)
+    }
+}
+
 struct HomeView: View {
     
     @StateObject var vm = HomeViewModel()
@@ -57,8 +75,8 @@ struct HomeView: View {
                 .font(.caption)
             
             Text("Pomodoro / focus")
-            Text(vm.pomodoroTimer.pomodoroTime.description)
-                .font(.largeTitle)
+            TimerView(time: vm.pomodoroTimer.pomodoroTime)
+            
                
             List {
                 VStack(alignment: .center) {
@@ -89,8 +107,9 @@ struct HomeView: View {
             .frame(width: UIScreen.main.bounds.width)
             .frame(maxWidth: .infinity)
             
-            Button("Time to focus!") {
+            Button(vm.pomodoroTimer.isTimerRunning ?  "Pause" : "Time to focus!") {
                 print("This will start the timer")
+                vm.pomodoroTimer.isTimerRunning ? vm.pauseTimer() : vm.startTimer()
             }
         }
         .padding()
