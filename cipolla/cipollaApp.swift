@@ -11,7 +11,7 @@ import SwiftUI
 struct cipollaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

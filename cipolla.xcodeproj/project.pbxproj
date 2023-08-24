@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6625A3172A97D1F2007348D0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3162A97D1F2007348D0 /* HomeViewModel.swift */; };
 		662BC1D5286B670A00768B5C /* cipollaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BC1D4286B670A00768B5C /* cipollaApp.swift */; };
-		662BC1D7286B670A00768B5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BC1D6286B670A00768B5C /* ContentView.swift */; };
+		662BC1D7286B670A00768B5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BC1D6286B670A00768B5C /* HomeView.swift */; };
 		662BC1D9286B670C00768B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662BC1D8286B670C00768B5C /* Assets.xcassets */; };
 		662BC1DC286B670C00768B5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662BC1DB286B670C00768B5C /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6625A3162A97D1F2007348D0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		662BC1D1286B670A00768B5C /* cipolla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cipolla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		662BC1D4286B670A00768B5C /* cipollaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cipollaApp.swift; sourceTree = "<group>"; };
-		662BC1D6286B670A00768B5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		662BC1D6286B670A00768B5C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		662BC1D8286B670C00768B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		662BC1DB286B670C00768B5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,9 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				662BC1D4286B670A00768B5C /* cipollaApp.swift */,
-				662BC1D6286B670A00768B5C /* ContentView.swift */,
+				662BC1D6286B670A00768B5C /* HomeView.swift */,
 				662BC1D8286B670C00768B5C /* Assets.xcassets */,
 				662BC1DA286B670C00768B5C /* Preview Content */,
+				6625A3162A97D1F2007348D0 /* HomeViewModel.swift */,
 			);
 			path = cipolla;
 			sourceTree = "<group>";
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				662BC1D7286B670A00768B5C /* ContentView.swift in Sources */,
+				662BC1D7286B670A00768B5C /* HomeView.swift in Sources */,
+				6625A3172A97D1F2007348D0 /* HomeViewModel.swift in Sources */,
 				662BC1D5286B670A00768B5C /* cipollaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
