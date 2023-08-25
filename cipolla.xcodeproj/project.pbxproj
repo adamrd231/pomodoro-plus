@@ -11,6 +11,7 @@
 		6625A31C2A97DED7007348D0 /* CheckBoxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A31B2A97DED7007348D0 /* CheckBoxToggleStyle.swift */; };
 		6625A31F2A97DF31007348D0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A31E2A97DF31007348D0 /* Task.swift */; };
 		6625A3212A97DF4E007348D0 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3202A97DF4E007348D0 /* TimerView.swift */; };
+		6625A3232A990949007348D0 /* CipollaTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3222A990949007348D0 /* CipollaTimerView.swift */; };
 		662BC1D5286B670A00768B5C /* cipollaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BC1D4286B670A00768B5C /* cipollaApp.swift */; };
 		662BC1D7286B670A00768B5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BC1D6286B670A00768B5C /* HomeView.swift */; };
 		662BC1D9286B670C00768B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662BC1D8286B670C00768B5C /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		6625A31B2A97DED7007348D0 /* CheckBoxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxToggleStyle.swift; sourceTree = "<group>"; };
 		6625A31E2A97DF31007348D0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		6625A3202A97DF4E007348D0 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		6625A3222A990949007348D0 /* CipollaTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipollaTimerView.swift; sourceTree = "<group>"; };
 		662BC1D1286B670A00768B5C /* cipolla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cipolla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		662BC1D4286B670A00768B5C /* cipollaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cipollaApp.swift; sourceTree = "<group>"; };
 		662BC1D6286B670A00768B5C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				662BC1D6286B670A00768B5C /* HomeView.swift */,
 				6625A3202A97DF4E007348D0 /* TimerView.swift */,
+				6625A3222A990949007348D0 /* CipollaTimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				6625A3172A97D1F2007348D0 /* HomeViewModel.swift in Sources */,
 				6625A31C2A97DED7007348D0 /* CheckBoxToggleStyle.swift in Sources */,
 				6625A31F2A97DF31007348D0 /* Task.swift in Sources */,
+				6625A3232A990949007348D0 /* CipollaTimerView.swift in Sources */,
 				662BC1D5286B670A00768B5C /* cipollaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,6 +30,17 @@ class HomeViewModel: ObservableObject {
     @Published var newTask: String = ""
     
     var timer = Timer()
+    
+    
+    func addItemToTaskList() {
+        guard newTask != "" else { return }
+        // Create new Task
+        let new = Task(name: newTask, isComplete: false)
+        // Append item to list
+        taskList.append(new)
+        // clear our the input field
+        newTask = ""
+    }
 
     func startTimer() {
         // Timer is running, update state and
