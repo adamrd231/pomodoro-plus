@@ -72,7 +72,7 @@ struct CipollaTimerView: View {
                 }
             } label: {
                 switch vm.pomodoroTimer.isTimerRunning {
-                    case .isPaused: Text("Timer to focus")
+                    case .isPaused: Text("Time to focus")
                     case .isRunning: Text("Pause")
                     case .isDone: Text("Reset")
                 }
