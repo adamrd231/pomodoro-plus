@@ -69,20 +69,38 @@ struct CipollaTimerView: View {
             .frame(width: UIScreen.main.bounds.width)
             .frame(maxWidth: .infinity)
             
-            Button {
-                print("Something")
-                switch vm.pomodoroTimer.isTimerRunning {
-                    case .isPaused: vm.startTimer()
-                    case .isRunning: vm.pauseTimer()
-                    case .isDone: vm.totalReset()
+            
+            HStack {
+                Button {
+                    print("Something")
+                    switch vm.pomodoroTimer.isTimerRunning {
+                        case .isPaused: vm.startTimer()
+                        case .isRunning: vm.pauseTimer()
+                        case .isDone: vm.totalReset()
+                    }
+                } label: {
+                    switch vm.pomodoroTimer.isTimerRunning {
+                    case .isPaused: HStack {
+                        Image(systemName: "highlighter")
+                        Text("Time to focus")
+                    }
+                        case .isRunning: Text("Pause")
+                        case .isDone: Text("Reset")
+                    }
                 }
-            } label: {
-                switch vm.pomodoroTimer.isTimerRunning {
-                    case .isPaused: Text("Time to focus")
-                    case .isRunning: Text("Pause")
-                    case .isDone: Text("Reset")
-                }
+                .buttonStyle(GreenButton())
+                
+                Button {
+                    vm.pauseTimer()
+                    vm.totalReset()
+                } label: {
+                    HStack {
+                        Image(systemName: "arrow.uturn.backward")
+                        Text("Reset")
+                    }
+                }.buttonStyle(GreenButton())
             }
+            
             
           
         }
@@ -93,7 +111,11 @@ struct CipollaTimerView: View {
 struct GreenButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .foregroundColor(Color.white)
+            .padding()
             .background(Color.theme.green)
+            .cornerRadius(15)
+
     }
 }
 
