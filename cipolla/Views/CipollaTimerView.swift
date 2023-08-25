@@ -11,27 +11,33 @@ struct CipollaTimerView: View {
     @EnvironmentObject var vm: HomeViewModel
     
     var body: some View {
-        VStack(alignment: .center) {
-            Text("Cipolla")
-                .font(.caption)
-            
-            Text(vm.pomodoroTimer.rounds == 0 ? "done" : "\(vm.pomodoroTimer.rounds.description) Rounds")
-                .font(.title3)
-                .fontWeight(.bold)
-            
-           
-            
-            switch vm.pomodoroTimer.timerOptionSelection {
-                case .pomodoro: TimerView(time: vm.pomodoroTimer.pomodoroTime)
-                case .shortBreak: TimerView(time: vm.pomodoroTimer.breakTime)
-            }
+        VStack {
+            // Top portion of screen
+            VStack(spacing: 5) {
+                Text("Cipolla")
+                    .font(.caption)
+                
+                Text(vm.pomodoroTimer.rounds == 0 ? "done" : "\(vm.pomodoroTimer.rounds.description) Rounds")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                
                
-            Picker("", selection: $vm.pomodoroTimer.timerOptionSelection) {
-                ForEach(vm.pomodoroTimer.timerOptions, id: \.self) { option in
-                    Text(option.description)
+                
+                switch vm.pomodoroTimer.timerOptionSelection {
+                    case .pomodoro: TimerView(time: vm.pomodoroTimer.pomodoroTime)
+                    case .shortBreak: TimerView(time: vm.pomodoroTimer.breakTime)
                 }
+                   
+                Picker("hello", selection: $vm.pomodoroTimer.timerOptionSelection) {
+                    ForEach(vm.pomodoroTimer.timerOptions, id: \.self) { option in
+                        Text(option.description)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .fixedSize()
             }
-            .pickerStyle(.segmented)
+            .padding()
+            
             List {
                 VStack(alignment: .center) {
                     TextField("What's the focus?", text: $vm.newTask)
