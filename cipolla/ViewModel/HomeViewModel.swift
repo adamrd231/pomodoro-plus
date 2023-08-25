@@ -15,7 +15,7 @@ enum TimerStates {
 
 struct PomodoroTimermodel {
     var pomodoroTime: Double = 1500
-    var breakTime: Double = 5
+    var breakTime: Double = 300
     var rounds: Int = 2
     var isTimerRunning: TimerStates = .isPaused
    

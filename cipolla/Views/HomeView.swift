@@ -27,24 +27,14 @@ struct HomeView: View {
                     }
                 }
             
-            VStack {
-                Text("Options")
-                List {
-                    HStack {
-                        Text("Rounds")
-                        Spacer()
-                        Stepper("\(vm.pomodoroTimer.rounds)", value: $vm.pomodoroTimer.rounds, in: 0...10)
+            Options(pomodoroOptions: $vm.pomodoroTimer)
+                .tabItem {
+                    VStack {
+                        Text("Options")
+                        Image(systemName: "option")
                     }
                 }
-            }
-            .tabItem {
-                VStack {
-                    Text("Options")
-                    Image(systemName: "option")
-                }
-            }
         }
-      
     }
 }
 

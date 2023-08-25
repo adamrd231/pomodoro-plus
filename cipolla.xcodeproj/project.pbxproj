@@ -12,6 +12,8 @@
 		6625A31F2A97DF31007348D0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A31E2A97DF31007348D0 /* Task.swift */; };
 		6625A3212A97DF4E007348D0 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3202A97DF4E007348D0 /* TimerView.swift */; };
 		6625A3232A990949007348D0 /* CipollaTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3222A990949007348D0 /* CipollaTimerView.swift */; };
+		6625A3252A9938A0007348D0 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3242A9938A0007348D0 /* Options.swift */; };
+		6625A3282A993B23007348D0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3272A993B23007348D0 /* Color.swift */; };
 		662BC1D5286B670A00768B5C /* cipollaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BC1D4286B670A00768B5C /* cipollaApp.swift */; };
 		662BC1D7286B670A00768B5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BC1D6286B670A00768B5C /* HomeView.swift */; };
 		662BC1D9286B670C00768B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662BC1D8286B670C00768B5C /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 		6625A31E2A97DF31007348D0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		6625A3202A97DF4E007348D0 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		6625A3222A990949007348D0 /* CipollaTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipollaTimerView.swift; sourceTree = "<group>"; };
+		6625A3242A9938A0007348D0 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		6625A3272A993B23007348D0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		662BC1D1286B670A00768B5C /* cipolla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cipolla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		662BC1D4286B670A00768B5C /* cipollaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cipollaApp.swift; sourceTree = "<group>"; };
 		662BC1D6286B670A00768B5C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 				662BC1D6286B670A00768B5C /* HomeView.swift */,
 				6625A3202A97DF4E007348D0 /* TimerView.swift */,
 				6625A3222A990949007348D0 /* CipollaTimerView.swift */,
+				6625A3242A9938A0007348D0 /* Options.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -74,6 +79,14 @@
 				6625A31E2A97DF31007348D0 /* Task.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6625A3262A993B1A007348D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6625A3272A993B23007348D0 /* Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		662BC1C8286B670A00768B5C = {
@@ -95,6 +108,7 @@
 		662BC1D3286B670A00768B5C /* cipolla */ = {
 			isa = PBXGroup;
 			children = (
+				6625A3262A993B1A007348D0 /* Extensions */,
 				662BC1D4286B670A00768B5C /* cipollaApp.swift */,
 				6625A31D2A97DF1D007348D0 /* Models */,
 				6625A3192A97DEAB007348D0 /* Views */,
@@ -188,9 +202,11 @@
 				662BC1D7286B670A00768B5C /* HomeView.swift in Sources */,
 				6625A3172A97D1F2007348D0 /* HomeViewModel.swift in Sources */,
 				6625A31C2A97DED7007348D0 /* CheckBoxToggleStyle.swift in Sources */,
+				6625A3252A9938A0007348D0 /* Options.swift in Sources */,
 				6625A31F2A97DF31007348D0 /* Task.swift in Sources */,
 				6625A3232A990949007348D0 /* CipollaTimerView.swift in Sources */,
 				662BC1D5286B670A00768B5C /* cipollaApp.swift in Sources */,
+				6625A3282A993B23007348D0 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -83,9 +83,17 @@ struct CipollaTimerView: View {
                     case .isDone: Text("Reset")
                 }
             }
+            
           
         }
         .padding()
+    }
+}
+
+struct GreenButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .background(Color.theme.green)
     }
 }
 
