@@ -18,12 +18,14 @@ struct PomodoroTimermodel {
     var breakTime: Double = 5
     var rounds: Int = 2
     var isTimerRunning: TimerStates = .isPaused
+   
+    var timerOptionSelection = TimerOptions.pomodoro
+    var timerOptions:[TimerOptions] = [.pomodoro, .shortBreak]
 }
 
 class HomeViewModel: ObservableObject {
     @Published var pomodoroTimer = PomodoroTimermodel()
     @Published var backUpPomodoroTimer = PomodoroTimermodel()
-
     @Published var taskList: [Task] = []
     @Published var newTask: String = ""
     
@@ -36,6 +38,11 @@ class HomeViewModel: ObservableObject {
         backUpPomodoroTimer = pomodoroTimer
         // Start timer
         self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            
+            if self.pomodoroTimer.pomodoroTime == 0 {
+                self.pomodoroTimer.timerOptionSelection = .shortBreak
+            }
+            
             // Check to make sure there are rounds left in the timer
             guard self.pomodoroTimer.rounds > 0 else {
                 self.pauseTimer()
@@ -45,20 +52,24 @@ class HomeViewModel: ObservableObject {
             
             // Check to make sure there is time left on the pomodoro timer
             guard self.pomodoroTimer.pomodoroTime != 0 else {
+                
                 self.pomodoroTimer.breakTime -= 1
                 
                 guard self.pomodoroTimer.breakTime != 0 else {
                     self.pomodoroTimer.rounds -= 1
                     guard self.pomodoroTimer.rounds != 0 else {
-                        return 
+                        return
                     }
                     self.resetTimer()
+                    self.pomodoroTimer.timerOptionSelection = .pomodoro
                     return
                 }
                 return
             }
 
             self.pomodoroTimer.pomodoroTime -= 1
+            
+            
         }
     }
     
@@ -68,6 +79,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func totalReset() {
+        pomodoroTimer.timerOptionSelection = .pomodoro
         pomodoroTimer = backUpPomodoroTimer
     }
     

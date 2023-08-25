@@ -14,6 +14,6 @@ struct TimerView: View {
             Text((time.truncatingRemainder(dividingBy: 60)), format: .number)
            
         }
-        .font(.largeTitle)
+        .font(.custom("", size: 100))
     }
 }

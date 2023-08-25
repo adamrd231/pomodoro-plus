@@ -1,5 +1,17 @@
 import SwiftUI
 
+enum TimerOptions: String {
+    case pomodoro
+    case shortBreak
+    
+    var description: String {
+        switch self {
+        case .pomodoro: return "Pomodoro"
+        case .shortBreak: return "Break"
+        }
+    }
+}
+
 struct HomeView: View {
     @StateObject var vm = HomeViewModel()
     
@@ -20,15 +32,19 @@ struct HomeView: View {
                 .font(.caption)
             
             
-            Text("Rounds \(vm.pomodoroTimer.rounds.description)")
-            HStack {
-                Text("Pomodoro / focus")
-                TimerView(time: vm.pomodoroTimer.pomodoroTime)
-                
-                Text("Break / rest")
-                TimerView(time: vm.pomodoroTimer.breakTime)
+            Text(vm.pomodoroTimer.rounds == 0 ? "done" : "Rounds \(vm.pomodoroTimer.rounds.description)")
+            
+            Picker("", selection: $vm.pomodoroTimer.timerOptionSelection) {
+                ForEach(vm.pomodoroTimer.timerOptions, id: \.self) { option in
+                    Text(option.description)
+                }
             }
-           
+            .pickerStyle(.segmented)
+            
+            switch vm.pomodoroTimer.timerOptionSelection {
+                case .pomodoro: TimerView(time: vm.pomodoroTimer.pomodoroTime)
+                case .shortBreak: TimerView(time: vm.pomodoroTimer.breakTime)
+            }
                
             List {
                 VStack(alignment: .center) {
@@ -39,6 +55,7 @@ struct HomeView: View {
                             addItemToTaskList()
                             
                         }
+                        .disabled(vm.pomodoroTimer.isTimerRunning == .isRunning)
                         Spacer()
                     }
                    
@@ -54,6 +71,7 @@ struct HomeView: View {
                 Button("Clear list") {
                     vm.taskList = []
                 }
+                .disabled(vm.pomodoroTimer.isTimerRunning == .isRunning)
                 
             }
             .frame(width: UIScreen.main.bounds.width)
