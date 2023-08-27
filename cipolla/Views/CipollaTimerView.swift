@@ -130,9 +130,7 @@ struct CipollaTimerView: View {
                     }
                 }
             }
-            
-            
-          
+            Banner(width: UIScreen.main.bounds.width)
         }
         .padding()
     }
