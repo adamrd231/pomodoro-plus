@@ -14,12 +14,13 @@ struct CipollaTimerView: View {
     var body: some View {
         VStack {
             // Top portion of screen
-            VStack(spacing: 5) {
-                Text("Cipolla")
-                    .font(.caption)
+            VStack(spacing: 0) {
+                Image("onion-icon")
+                    .resizable()
+                    .frame(width: 50, height: 50, alignment: .center)
                 
                 Text(vm.pomodoroTimer.rounds == 0 ? "done" : "\(vm.pomodoroTimer.rounds.description) Rounds")
-                    .font(.title3)
+                    .font(.title)
                     .fontWeight(.bold)
                 
                 switch vm.pomodoroTimer.timerOptionSelection {
@@ -142,10 +143,10 @@ struct GreenButton: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundColor(isEnabled ? Color.theme.green : Color.theme.green.opacity(0.2))
+            .foregroundColor(isEnabled ? Color.theme.green : Color.theme.green.opacity(0.3))
             .frame(maxWidth: .infinity)
             .padding()
-            .background(Color.theme.green.opacity(0.1))
+            .background(Color.theme.green.opacity(0.2))
             .cornerRadius(15)
 
     }
