@@ -29,6 +29,7 @@ class HomeViewModel: ObservableObject {
     @Published var backUpPomodoroTimer = PomodoroTimermodel()
     @Published var taskList: [Task] = []
     @Published var newTask: String = ""
+    let adsVM = AdsViewModel.shared
     
     var timer = Timer()
     
@@ -99,6 +100,7 @@ class HomeViewModel: ObservableObject {
         pomodoroTimer.isTimerRunning = .notStarted
         pomodoroTimer.timerOptionSelection = .pomodoro
         pomodoroTimer = backUpPomodoroTimer
+        adsVM.interstitial.showAd()
     }
     
     func pauseTimer() {

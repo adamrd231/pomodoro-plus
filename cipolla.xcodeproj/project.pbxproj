@@ -19,6 +19,7 @@
 		662BC1D9286B670C00768B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662BC1D8286B670C00768B5C /* Assets.xcassets */; };
 		662BC1DC286B670C00768B5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662BC1DB286B670C00768B5C /* Preview Assets.xcassets */; };
 		6660D4672A9B9C3900AA3847 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660D4662A9B9C3900AA3847 /* Banner.swift */; };
+		6660D4692A9B9D7C00AA3847 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660D4682A9B9D7C00AA3847 /* Interstitial.swift */; };
 		8F7DB64ABC61F052FA7A62BF /* Pods_cipolla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD5EA6A393A65F4BC074907 /* Pods_cipolla.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		662BC1DB286B670C00768B5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6660D4642A9B9BFD00AA3847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6660D4662A9B9C3900AA3847 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		6660D4682A9B9D7C00AA3847 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
 		9CD5EA6A393A65F4BC074907 /* Pods_cipolla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cipolla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9246D374449F1109C6BD431 /* Pods-cipolla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cipolla.debug.xcconfig"; path = "Target Support Files/Pods-cipolla/Pods-cipolla.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				6660D4662A9B9C3900AA3847 /* Banner.swift */,
+				6660D4682A9B9D7C00AA3847 /* Interstitial.swift */,
 			);
 			path = Admob;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				662BC1D7286B670A00768B5C /* HomeView.swift in Sources */,
 				6625A3172A97D1F2007348D0 /* HomeViewModel.swift in Sources */,
 				6625A31C2A97DED7007348D0 /* CheckBoxToggleStyle.swift in Sources */,
+				6660D4692A9B9D7C00AA3847 /* Interstitial.swift in Sources */,
 				6625A3252A9938A0007348D0 /* Options.swift in Sources */,
 				6625A31F2A97DF31007348D0 /* Task.swift in Sources */,
 				6625A3232A990949007348D0 /* CipollaTimerView.swift in Sources */,
