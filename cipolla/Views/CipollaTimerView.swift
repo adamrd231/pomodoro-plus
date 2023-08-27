@@ -92,8 +92,14 @@ struct CipollaTimerView: View {
                             Image(systemName: "highlighter")
                             Text("Restart the focus")
                         }
-                        case .isRunning: Text("Pause")
-                        case .isDone: Text("Reset")
+                        case .isRunning: HStack {
+                            Image(systemName: "pause")
+                            Text("Pause")
+                        }
+                        case .isDone: HStack {
+                            Image(systemName: "arrow.uturn.forward")
+                            Text("Reset")
+                        }
                     }
                 }
                 .buttonStyle(GreenButton())
