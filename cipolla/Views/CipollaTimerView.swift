@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CipollaTimerView: View {
     @EnvironmentObject var vm: HomeViewModel
+    @State var isShowingResetConfirmation: Bool = false
     
     var body: some View {
         VStack {
@@ -21,11 +22,11 @@ struct CipollaTimerView: View {
                     .font(.title3)
                     .fontWeight(.bold)
                 
-               
-                
                 switch vm.pomodoroTimer.timerOptionSelection {
                     case .pomodoro: TimerView(time: vm.pomodoroTimer.pomodoroTime)
+                        .font(.system(size: 100, weight: .bold, design: .rounded))
                     case .shortBreak: TimerView(time: vm.pomodoroTimer.breakTime)
+                        .font(.system(size: 100, weight: .bold, design: .rounded))
                 }
                    
                 Picker("hello", selection: $vm.pomodoroTimer.timerOptionSelection) {
@@ -47,7 +48,8 @@ struct CipollaTimerView: View {
                             vm.addItemToTaskList()
                             
                         }
-                        .disabled(vm.pomodoroTimer.isTimerRunning == .isRunning)
+                        .buttonStyle(ListButton())
+                        .disabled(vm.pomodoroTimer.isTimerRunning == .isRunning || vm.newTask == "")
                         Spacer()
                     }
                    
@@ -63,27 +65,33 @@ struct CipollaTimerView: View {
                 Button("Clear list") {
                     vm.taskList = []
                 }
-                .disabled(vm.pomodoroTimer.isTimerRunning == .isRunning)
+                .buttonStyle(ListButton())
+                .disabled(vm.pomodoroTimer.isTimerRunning == .isRunning || vm.taskList.count == 0)
                 
             }
             .frame(width: UIScreen.main.bounds.width)
             .frame(maxWidth: .infinity)
             
             
-            HStack {
+            VStack {
                 Button {
                     print("Something")
                     switch vm.pomodoroTimer.isTimerRunning {
-                        case .isPaused: vm.startTimer()
+                        case .notStarted: vm.startTimer()
+                        case .isPaused: vm.runTimer()
                         case .isRunning: vm.pauseTimer()
                         case .isDone: vm.totalReset()
                     }
                 } label: {
                     switch vm.pomodoroTimer.isTimerRunning {
-                    case .isPaused: HStack {
-                        Image(systemName: "highlighter")
-                        Text("Time to focus")
-                    }
+                        case .notStarted: HStack {
+                            Image(systemName: "highlighter")
+                            Text("Time to focus")
+                        }
+                        case .isPaused: HStack {
+                            Image(systemName: "highlighter")
+                            Text("Restart the focus")
+                        }
                         case .isRunning: Text("Pause")
                         case .isDone: Text("Reset")
                     }
@@ -91,14 +99,20 @@ struct CipollaTimerView: View {
                 .buttonStyle(GreenButton())
                 
                 Button {
-                    vm.pauseTimer()
-                    vm.totalReset()
+                    isShowingResetConfirmation.toggle()
                 } label: {
                     HStack {
                         Image(systemName: "arrow.uturn.backward")
                         Text("Reset")
                     }
-                }.buttonStyle(GreenButton())
+                }
+                .buttonStyle(GreenButton())
+                .confirmationDialog("", isPresented: $isShowingResetConfirmation) {
+                    Button("You sure you want to reset?") {
+                        vm.pauseTimer()
+                        vm.totalReset()
+                    }
+                }
             }
             
             
@@ -109,13 +123,25 @@ struct CipollaTimerView: View {
 }
 
 struct GreenButton: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled: Bool
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .foregroundColor(Color.white)
+            .foregroundColor(isEnabled ? Color.theme.green : Color.theme.green.opacity(0.2))
+            .frame(maxWidth: .infinity)
             .padding()
-            .background(Color.theme.green)
+            .background(Color.theme.green.opacity(0.1))
             .cornerRadius(15)
 
+    }
+}
+
+struct ListButton: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled: Bool
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(isEnabled ? Color.theme.green : Color.theme.green.opacity(0.2))
     }
 }
 

@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum TimerStates {
+    case notStarted
     case isRunning
     case isPaused
     case isDone
@@ -17,7 +18,7 @@ struct PomodoroTimermodel {
     var pomodoroTime: Double = 1500
     var breakTime: Double = 300
     var rounds: Int = 2
-    var isTimerRunning: TimerStates = .isPaused
+    var isTimerRunning: TimerStates = .notStarted
    
     var timerOptionSelection = TimerOptions.pomodoro
     var timerOptions:[TimerOptions] = [.pomodoro, .shortBreak]
@@ -41,15 +42,12 @@ class HomeViewModel: ObservableObject {
         // clear our the input field
         newTask = ""
     }
-
-    func startTimer() {
+    
+    func runTimer() {
         // Timer is running, update state and
         pomodoroTimer.isTimerRunning = .isRunning
-        // Save backup for resetting values
-        backUpPomodoroTimer = pomodoroTimer
-        // Start timer
+        
         self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            
             if self.pomodoroTimer.pomodoroTime == 0 {
                 self.pomodoroTimer.timerOptionSelection = .shortBreak
             }
@@ -83,6 +81,14 @@ class HomeViewModel: ObservableObject {
             
         }
     }
+
+    func startTimer() {
+        // Save backup for resetting values
+        backUpPomodoroTimer = pomodoroTimer
+        // Start timer
+        runTimer()
+        
+    }
     
     func resetTimer() {
         pomodoroTimer.pomodoroTime = backUpPomodoroTimer.pomodoroTime
@@ -90,6 +96,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func totalReset() {
+        pomodoroTimer.isTimerRunning = .notStarted
         pomodoroTimer.timerOptionSelection = .pomodoro
         pomodoroTimer = backUpPomodoroTimer
     }
