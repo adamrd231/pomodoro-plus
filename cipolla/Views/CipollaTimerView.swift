@@ -43,10 +43,14 @@ struct CipollaTimerView: View {
                 VStack(alignment: .center) {
                     TextField("What's the focus?", text: $vm.newTask)
                     HStack {
-                        Button("Add task") {
+                        Button{
                             print("Add task to list for current pomodoro")
                             vm.addItemToTaskList()
-                            
+                        } label: {
+                            HStack {
+                                Image(systemName: "plus.circle.fill")
+                                Text("Add task")
+                            }
                         }
                         .buttonStyle(ListButton())
                         .disabled(vm.pomodoroTimer.isTimerRunning == .isRunning || vm.newTask == "")
@@ -62,8 +66,13 @@ struct CipollaTimerView: View {
                         Text(task.name)
                     }
                 }
-                Button("Clear list") {
+                Button {
                     vm.taskList = []
+                } label: {
+                    HStack {
+                        Image(systemName: "xmark.circle")
+                        Text("Clear list")
+                    }
                 }
                 .buttonStyle(ListButton())
                 .disabled(vm.pomodoroTimer.isTimerRunning == .isRunning || vm.taskList.count == 0)
