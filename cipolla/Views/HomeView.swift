@@ -34,6 +34,14 @@ struct HomeView: View {
                         Image(systemName: "option")
                     }
                 }
+            
+            InAppPurchases()
+                .tabItem {
+                    VStack {
+                        Text("In App Purchases")
+                        Image(systemName: "creditcard")
+                    }
+                }
         }
     }
 }
