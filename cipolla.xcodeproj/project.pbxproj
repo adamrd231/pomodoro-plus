@@ -21,6 +21,7 @@
 		6660D4672A9B9C3900AA3847 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660D4662A9B9C3900AA3847 /* Banner.swift */; };
 		6660D4692A9B9D7C00AA3847 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660D4682A9B9D7C00AA3847 /* Interstitial.swift */; };
 		6660D46C2A9CF5F400AA3847 /* InAppPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660D46B2A9CF5F400AA3847 /* InAppPurchases.swift */; };
+		6660D46E2A9CF79600AA3847 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6660D46D2A9CF79600AA3847 /* StoreKit.framework */; };
 		8F7DB64ABC61F052FA7A62BF /* Pods_cipolla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD5EA6A393A65F4BC074907 /* Pods_cipolla.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		6660D4662A9B9C3900AA3847 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		6660D4682A9B9D7C00AA3847 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
 		6660D46B2A9CF5F400AA3847 /* InAppPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchases.swift; sourceTree = "<group>"; };
+		6660D46D2A9CF79600AA3847 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6660D46F2A9CF7CF00AA3847 /* StoreProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreProducts.storekit; sourceTree = "<group>"; };
 		9CD5EA6A393A65F4BC074907 /* Pods_cipolla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cipolla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9246D374449F1109C6BD431 /* Pods-cipolla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cipolla.debug.xcconfig"; path = "Target Support Files/Pods-cipolla/Pods-cipolla.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7DB64ABC61F052FA7A62BF /* Pods_cipolla.framework in Frameworks */,
+				6660D46E2A9CF79600AA3847 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +65,7 @@
 		007389B5DF31A78AB75BE7FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6660D46D2A9CF79600AA3847 /* StoreKit.framework */,
 				9CD5EA6A393A65F4BC074907 /* Pods_cipolla.framework */,
 			);
 			name = Frameworks;
@@ -86,7 +91,6 @@
 		6625A3192A97DEAB007348D0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6660D46A2A9CF5E100AA3847 /* AppStore */,
 				662BC1D6286B670A00768B5C /* HomeView.swift */,
 				6625A3202A97DF4E007348D0 /* TimerView.swift */,
 				6625A3222A990949007348D0 /* CipollaTimerView.swift */,
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				662BC1D3286B670A00768B5C /* cipolla */,
+				6660D46A2A9CF5E100AA3847 /* AppStore */,
 				662BC1D2286B670A00768B5C /* Products */,
 				2CD53EE13565859C233F9FBC /* Pods */,
 				007389B5DF31A78AB75BE7FC /* Frameworks */,
@@ -140,15 +145,16 @@
 		662BC1D3286B670A00768B5C /* cipolla */ = {
 			isa = PBXGroup;
 			children = (
-				6660D4652A9B9C3200AA3847 /* Admob */,
-				6660D4642A9B9BFD00AA3847 /* Info.plist */,
-				6625A3262A993B1A007348D0 /* Extensions */,
 				662BC1D4286B670A00768B5C /* cipollaApp.swift */,
-				6625A31D2A97DF1D007348D0 /* Models */,
-				6625A3192A97DEAB007348D0 /* Views */,
-				6625A3182A97DEA1007348D0 /* ViewModel */,
-				6625A31A2A97DEBF007348D0 /* Components */,
+				6660D4642A9B9BFD00AA3847 /* Info.plist */,
 				662BC1D8286B670C00768B5C /* Assets.xcassets */,
+				6660D46F2A9CF7CF00AA3847 /* StoreProducts.storekit */,
+				6625A3262A993B1A007348D0 /* Extensions */,
+				6660D4652A9B9C3200AA3847 /* Admob */,
+				6625A31A2A97DEBF007348D0 /* Components */,
+				6625A31D2A97DF1D007348D0 /* Models */,
+				6625A3182A97DEA1007348D0 /* ViewModel */,
+				6625A3192A97DEAB007348D0 /* Views */,
 				662BC1DA286B670C00768B5C /* Preview Content */,
 			);
 			path = cipolla;
