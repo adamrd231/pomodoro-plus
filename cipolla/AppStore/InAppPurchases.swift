@@ -33,12 +33,9 @@ struct InAppPurchases: View {
                            
                             } else {
                                 Button(product.displayPrice) {
-                                    print("Attempt a purchase")
-                                    print(vm.store.purchasedNonConsumables.contains(where: { $0.displayName == "Remove Advertising"}))
                                     Task {
                                         try await vm.store.attemptInAppPurchase(product)
                                     }
-                                    
                                 }
                             }
                            
@@ -46,6 +43,7 @@ struct InAppPurchases: View {
                     }
                 }
             }
+
             Section(header:Text("Restore")) {
                 VStack(alignment: .leading) {
                     Text("Restores any previously made purchases from the before fore time..")

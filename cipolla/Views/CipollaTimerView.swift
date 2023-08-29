@@ -46,7 +46,6 @@ struct CipollaTimerView: View {
                     TextField("What's the focus?", text: $vm.newTask)
                     HStack {
                         Button{
-                            print("Add task to list for current pomodoro")
                             vm.addItemToTaskList()
                         } label: {
                             HStack {

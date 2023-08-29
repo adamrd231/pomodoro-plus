@@ -36,7 +36,7 @@ class InterstitialAdManager: NSObject, ObservableObject {
             if let fullScreenAds = interstitial {
                 fullScreenAds.present(fromRootViewController: root!)
             } else {
-                print("not ready")
+                print("not ready to show interstitial ad")
             }
         }
     }
