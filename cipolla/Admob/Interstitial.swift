@@ -4,7 +4,7 @@ import GoogleMobileAds
 class InterstitialAdManager: NSObject, ObservableObject {
     
     private struct AdMobConstant {
-        static let interstitialID = "ca-app-pub-4186253562269967/5364863972"
+        static let interstitialID = "ca-app-pub-4186253562269967/1366323143"
         static let testInterstitialID = "ca-app-pub-3940256099942544/4411468910"
     }
     
@@ -39,10 +39,7 @@ class InterstitialAdManager: NSObject, ObservableObject {
                 print("not ready")
             }
         }
-        
     }
-    
-    
 }
 
 
