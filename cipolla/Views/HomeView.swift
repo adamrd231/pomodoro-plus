@@ -14,6 +14,7 @@ enum TimerOptions: String {
 
 struct HomeView: View {
     @StateObject var vm = HomeViewModel()
+    @StateObject var store = StoreManager()
     
     var body: some View {
         // Status showing what step user is on
@@ -35,7 +36,7 @@ struct HomeView: View {
                     }
                 }
             
-            InAppPurchases()
+            InAppPurchases(storeManager: store)
                 .tabItem {
                     VStack {
                         Text("In App Purchases")

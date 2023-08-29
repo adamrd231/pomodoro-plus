@@ -14,8 +14,6 @@ class Store: ObservableObject {
         "rdconcepts.removeAdvertising.cipolla",
     ]
     
-
-    
     @MainActor
     func requestProducts() async {
         do {
