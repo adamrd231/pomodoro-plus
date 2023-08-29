@@ -18,16 +18,11 @@ class StoreManager: ObservableObject {
     var transactionListener: Task<Void, Error>?
     
     private var productIDs = [
-        "cryptoRemoveAds",
-        "design.rdconcepts.purchaseOneThousand",
-        "design.rdconcepts.crypto.tenThousand",
-        "design.rdconcepts.crypto.oneHundredThousand",
-        "design.rdconepts.crypto.fifteenThousand",
-        "design.rdconcepts.crypto.twentyFiveThousand",
-        "design.rdconcepts.crypto.fiveThousand"
+        "rdconcepts.removeAdvertising.cipolla"
     ]
     
     init() {
+        print("Init store")
         transactionListener = listenForTransactions()
         Task {
             await requestProducts()
@@ -40,7 +35,8 @@ class StoreManager: ObservableObject {
     @MainActor
     func requestProducts() async {
         do {
-            products = try await Product.products(for: productIDs).sorted(by: { $0.price < $1.price })
+            products = try await Product.products(for: productIDs)
+            print("products: \(products)")
         } catch let error {
             print("Error fetching products: \(error)")
         }

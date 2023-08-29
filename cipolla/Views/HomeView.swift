@@ -36,7 +36,7 @@ struct HomeView: View {
                     }
                 }
             
-            InAppPurchases(storeManager: store)
+            InAppPurchases(store: store)
                 .tabItem {
                     VStack {
                         Text("In App Purchases")
