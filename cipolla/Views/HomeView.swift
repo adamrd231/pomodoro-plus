@@ -13,14 +13,12 @@ enum TimerOptions: String {
 }
 
 struct HomeView: View {
-    @StateObject var vm = HomeViewModel()
-    @StateObject var store = StoreManager()
+    @ObservedObject var vm = HomeViewModel()
     
     var body: some View {
         // Status showing what step user is on
         TabView {
-            CipollaTimerView()
-                .environmentObject(vm)
+            CipollaTimerView(vm: vm)
                 .tabItem {
                     VStack {
                         Text("Home")
@@ -36,7 +34,8 @@ struct HomeView: View {
                     }
                 }
             
-            InAppPurchases(store: store)
+            InAppPurchases()
+                .environmentObject(vm)
                 .tabItem {
                     VStack {
                         Text("In App Purchases")

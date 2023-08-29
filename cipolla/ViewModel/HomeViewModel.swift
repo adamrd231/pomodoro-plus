@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import StoreKit
+import Combine
 
 enum TimerStates {
     case notStarted
@@ -29,10 +31,29 @@ class HomeViewModel: ObservableObject {
     @Published var backUpPomodoroTimer = PomodoroTimermodel()
     @Published var taskList: [PomodoroTask] = []
     @Published var newTask: String = ""
+    
+    @Published var store = StoreManager()
+    
+    @Published var inAppPurchases:Set<Product> = []
+    
     let adsVM = AdsViewModel.shared
     
     var timer = Timer()
     
+    // Cancellable for subscribers
+    private var cancellable = Set<AnyCancellable>()
+    
+    init() {
+        addSubscribers()
+    }
+    
+    func addSubscribers() {
+        store.$purchasedNonConsumables
+            .sink { [weak self] (purchases) in
+                self?.inAppPurchases = purchases
+            }
+            .store(in: &cancellable)
+    }
     
     func addItemToTaskList() {
         guard newTask != "" else { return }
@@ -100,7 +121,9 @@ class HomeViewModel: ObservableObject {
         pomodoroTimer.isTimerRunning = .notStarted
         pomodoroTimer.timerOptionSelection = .pomodoro
         pomodoroTimer = backUpPomodoroTimer
-        adsVM.interstitial.showAd()
+        if !store.purchasedNonConsumables.contains(where: { $0.displayName == "Remove Advertising"}) {
+            adsVM.interstitial.showAd()
+        }
     }
     
     func pauseTimer() {

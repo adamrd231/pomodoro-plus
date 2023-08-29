@@ -19,7 +19,6 @@ class StoreManager: ObservableObject {
     private var productIDs = ["rdconcepts.removeAdvertising.cipolla"]
     
     init() {
-        print("Init store")
         transactionListener = listenForTransactions()
         Task {
             await requestProducts()
@@ -33,7 +32,7 @@ class StoreManager: ObservableObject {
     func requestProducts() async {
         do {
             products = try await Product.products(for: productIDs).sorted(by: { $0.price < $1.price })
-            print("products: \(products)")
+     
         } catch let error {
             print("Error fetching products: \(error)")
         }
@@ -47,7 +46,9 @@ class StoreManager: ObservableObject {
             purchasedNonConsumables.insert(product)
             await transaction.finish()
             return transaction
-        default: return nil
+        default:
+            print("error attempting purchase")
+            return nil
             
         }
     }

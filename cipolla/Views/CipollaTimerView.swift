@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CipollaTimerView: View {
-    @EnvironmentObject var vm: HomeViewModel
+    @StateObject var vm: HomeViewModel
+//    @EnvironmentObject var vm: HomeViewModel
     @State var isShowingResetConfirmation: Bool = false
     
     var body: some View {
@@ -85,7 +86,6 @@ struct CipollaTimerView: View {
             
             VStack {
                 Button {
-                    print("Something")
                     switch vm.pomodoroTimer.isTimerRunning {
                         case .notStarted: vm.startTimer()
                         case .isPaused: vm.runTimer()
@@ -130,7 +130,9 @@ struct CipollaTimerView: View {
                     }
                 }
             }
-            Banner(width: UIScreen.main.bounds.width)
+            if !vm.inAppPurchases.contains(where: { $0.displayName == "Remove Advertising"}) {
+                Banner(width: UIScreen.main.bounds.width)
+            }
         }
         .padding()
     }
@@ -146,7 +148,6 @@ struct GreenButton: ButtonStyle {
             .padding()
             .background(Color.theme.green.opacity(0.2))
             .cornerRadius(15)
-
     }
 }
 
@@ -161,6 +162,7 @@ struct ListButton: ButtonStyle {
 
 struct CipollaTimerView_Previews: PreviewProvider {
     static var previews: some View {
-        CipollaTimerView()
+        CipollaTimerView(vm: HomeViewModel())
+//            .environmentObject(HomeViewModel())
     }
 }

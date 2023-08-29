@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct InAppPurchases: View {
-    
-    @State var store: StoreManager
+    @EnvironmentObject var vm: HomeViewModel
     
     var body: some View {
         List {
@@ -25,14 +24,24 @@ struct InAppPurchases: View {
             }
             Section(header: Text("Advertising")) {
                 HStack {
-                    ForEach(store.products, id: \.self) { product in
+                    ForEach(vm.store.products, id: \.self) { product in
                         HStack {
-                            Text("Product name: \(product.displayName)")
+                            Text(product.displayName)
                             Spacer()
-                            Button(product.displayPrice) {
-                                print("Something")
+                            if vm.store.purchasedNonConsumables.contains(where: { $0.displayName == "Remove Advertising"}) {
+                                Text("Thanks!")
+                           
+                            } else {
+                                Button(product.displayPrice) {
+                                    print("Attempt a purchase")
+                                    print(vm.store.purchasedNonConsumables.contains(where: { $0.displayName == "Remove Advertising"}))
+                                    Task {
+                                        try await vm.store.attemptInAppPurchase(product)
+                                    }
+                                    
+                                }
                             }
-                            .disabled(store.purchasedNonConsumables.contains(where: { $0.displayName == "remove-advertising" }))
+                           
                         }
                     }
                 }
@@ -42,7 +51,7 @@ struct InAppPurchases: View {
                     Text("Restores any previously made purchases from the before fore time..")
                     Button("Restore") {
                         Task {
-                            try await store.restorePurchases()
+                            try await vm.store.restorePurchases()
                         }
                     }
                 }
@@ -53,6 +62,7 @@ struct InAppPurchases: View {
 
 struct InAppPurchases_Previews: PreviewProvider {
     static var previews: some View {
-        InAppPurchases(store: StoreManager())
+        InAppPurchases()
+            .environmentObject(HomeViewModel())
     }
 }
