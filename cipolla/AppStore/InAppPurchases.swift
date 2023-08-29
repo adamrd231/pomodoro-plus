@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InAppPurchases: View {
     
-    var store: StoreManager
+    @State var store: StoreManager
     
     var body: some View {
         List {
@@ -25,22 +25,25 @@ struct InAppPurchases: View {
             }
             Section(header: Text("Advertising")) {
                 HStack {
-                    ForEach(store.products, id: \.displayName) { product in
+                    ForEach(store.products, id: \.self) { product in
                         HStack {
-                            Text(product.displayName)
+                            Text("Product name: \(product.displayName)")
                             Spacer()
                             Button(product.displayPrice) {
                                 print("Something")
                             }
+                            .disabled(store.purchasedNonConsumables.contains(where: { $0.displayName == "remove-advertising" }))
                         }
                     }
                 }
             }
             Section(header:Text("Restore")) {
-                VStack {
-                    Text("Restore any previously made purchases.")
+                VStack(alignment: .leading) {
+                    Text("Restores any previously made purchases from the before fore time..")
                     Button("Restore") {
-                        
+                        Task {
+                            try await store.restorePurchases()
+                        }
                     }
                 }
             }

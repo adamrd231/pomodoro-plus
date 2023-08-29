@@ -13,13 +13,10 @@ class StoreManager: ObservableObject {
     @Published var products:[Product] = []
     @Published var purchasedNonConsumables:Set<Product> = []
     @Published var purchasedConsumables: [Product] = []
-    
     @Published var entitlements:[Transaction] = []
     var transactionListener: Task<Void, Error>?
     
-    private var productIDs = [
-        "rdconcepts.removeAdvertising.cipolla"
-    ]
+    private var productIDs = ["rdconcepts.removeAdvertising.cipolla"]
     
     init() {
         print("Init store")
@@ -35,7 +32,7 @@ class StoreManager: ObservableObject {
     @MainActor
     func requestProducts() async {
         do {
-            products = try await Product.products(for: productIDs)
+            products = try await Product.products(for: productIDs).sorted(by: { $0.price < $1.price })
             print("products: \(products)")
         } catch let error {
             print("Error fetching products: \(error)")
@@ -47,9 +44,7 @@ class StoreManager: ObservableObject {
         let result = try await product.purchase()
         switch result {
         case .success(.verified(let transaction)):
-   
             purchasedNonConsumables.insert(product)
-           
             await transaction.finish()
             return transaction
         default: return nil
