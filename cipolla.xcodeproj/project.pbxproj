@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6625A3172A97D1F2007348D0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3162A97D1F2007348D0 /* HomeViewModel.swift */; };
 		6625A31C2A97DED7007348D0 /* CheckBoxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A31B2A97DED7007348D0 /* CheckBoxToggleStyle.swift */; };
-		6625A31F2A97DF31007348D0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A31E2A97DF31007348D0 /* Task.swift */; };
+		6625A31F2A97DF31007348D0 /* PomodoroTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A31E2A97DF31007348D0 /* PomodoroTask.swift */; };
 		6625A3212A97DF4E007348D0 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3202A97DF4E007348D0 /* TimerView.swift */; };
 		6625A3232A990949007348D0 /* CipollaTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3222A990949007348D0 /* CipollaTimerView.swift */; };
 		6625A3252A9938A0007348D0 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6625A3242A9938A0007348D0 /* Options.swift */; };
@@ -18,10 +18,12 @@
 		662BC1D7286B670A00768B5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662BC1D6286B670A00768B5C /* HomeView.swift */; };
 		662BC1D9286B670C00768B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662BC1D8286B670C00768B5C /* Assets.xcassets */; };
 		662BC1DC286B670C00768B5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662BC1DB286B670C00768B5C /* Preview Assets.xcassets */; };
+		665F40102A9E43F0001EF92D /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665F400F2A9E43F0001EF92D /* StoreManager.swift */; };
 		6660D4672A9B9C3900AA3847 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660D4662A9B9C3900AA3847 /* Banner.swift */; };
 		6660D4692A9B9D7C00AA3847 /* Interstitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660D4682A9B9D7C00AA3847 /* Interstitial.swift */; };
 		6660D46C2A9CF5F400AA3847 /* InAppPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660D46B2A9CF5F400AA3847 /* InAppPurchases.swift */; };
 		6660D46E2A9CF79600AA3847 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6660D46D2A9CF79600AA3847 /* StoreKit.framework */; };
+		6660D4712A9CF81B00AA3847 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6660D4702A9CF81B00AA3847 /* Store.swift */; };
 		8F7DB64ABC61F052FA7A62BF /* Pods_cipolla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD5EA6A393A65F4BC074907 /* Pods_cipolla.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +31,7 @@
 		4B1730EEA9FB6E2594FEF179 /* Pods-cipolla.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cipolla.release.xcconfig"; path = "Target Support Files/Pods-cipolla/Pods-cipolla.release.xcconfig"; sourceTree = "<group>"; };
 		6625A3162A97D1F2007348D0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6625A31B2A97DED7007348D0 /* CheckBoxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxToggleStyle.swift; sourceTree = "<group>"; };
-		6625A31E2A97DF31007348D0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		6625A31E2A97DF31007348D0 /* PomodoroTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTask.swift; sourceTree = "<group>"; };
 		6625A3202A97DF4E007348D0 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		6625A3222A990949007348D0 /* CipollaTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipollaTimerView.swift; sourceTree = "<group>"; };
 		6625A3242A9938A0007348D0 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -39,12 +41,14 @@
 		662BC1D6286B670A00768B5C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		662BC1D8286B670C00768B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		662BC1DB286B670C00768B5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		665F400F2A9E43F0001EF92D /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		6660D4642A9B9BFD00AA3847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6660D4662A9B9C3900AA3847 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
 		6660D4682A9B9D7C00AA3847 /* Interstitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interstitial.swift; sourceTree = "<group>"; };
 		6660D46B2A9CF5F400AA3847 /* InAppPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchases.swift; sourceTree = "<group>"; };
 		6660D46D2A9CF79600AA3847 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		6660D46F2A9CF7CF00AA3847 /* StoreProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreProducts.storekit; sourceTree = "<group>"; };
+		6660D46F2A9CF7CF00AA3847 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		6660D4702A9CF81B00AA3847 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9CD5EA6A393A65F4BC074907 /* Pods_cipolla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cipolla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9246D374449F1109C6BD431 /* Pods-cipolla.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cipolla.debug.xcconfig"; path = "Target Support Files/Pods-cipolla/Pods-cipolla.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,7 +114,7 @@
 		6625A31D2A97DF1D007348D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6625A31E2A97DF31007348D0 /* Task.swift */,
+				6625A31E2A97DF31007348D0 /* PomodoroTask.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				662BC1D3286B670A00768B5C /* cipolla */,
-				6660D46A2A9CF5E100AA3847 /* AppStore */,
 				662BC1D2286B670A00768B5C /* Products */,
 				2CD53EE13565859C233F9FBC /* Pods */,
 				007389B5DF31A78AB75BE7FC /* Frameworks */,
@@ -145,10 +148,10 @@
 		662BC1D3286B670A00768B5C /* cipolla */ = {
 			isa = PBXGroup;
 			children = (
+				6660D46A2A9CF5E100AA3847 /* AppStore */,
 				662BC1D4286B670A00768B5C /* cipollaApp.swift */,
 				6660D4642A9B9BFD00AA3847 /* Info.plist */,
 				662BC1D8286B670C00768B5C /* Assets.xcassets */,
-				6660D46F2A9CF7CF00AA3847 /* StoreProducts.storekit */,
 				6625A3262A993B1A007348D0 /* Extensions */,
 				6660D4652A9B9C3200AA3847 /* Admob */,
 				6625A31A2A97DEBF007348D0 /* Components */,
@@ -181,6 +184,9 @@
 			isa = PBXGroup;
 			children = (
 				6660D46B2A9CF5F400AA3847 /* InAppPurchases.swift */,
+				6660D4702A9CF81B00AA3847 /* Store.swift */,
+				6660D46F2A9CF7CF00AA3847 /* Products.storekit */,
+				665F400F2A9E43F0001EF92D /* StoreManager.swift */,
 			);
 			path = AppStore;
 			sourceTree = "<group>";
@@ -300,13 +306,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6625A3212A97DF4E007348D0 /* TimerView.swift in Sources */,
+				665F40102A9E43F0001EF92D /* StoreManager.swift in Sources */,
 				6660D46C2A9CF5F400AA3847 /* InAppPurchases.swift in Sources */,
 				662BC1D7286B670A00768B5C /* HomeView.swift in Sources */,
 				6625A3172A97D1F2007348D0 /* HomeViewModel.swift in Sources */,
 				6625A31C2A97DED7007348D0 /* CheckBoxToggleStyle.swift in Sources */,
 				6660D4692A9B9D7C00AA3847 /* Interstitial.swift in Sources */,
 				6625A3252A9938A0007348D0 /* Options.swift in Sources */,
-				6625A31F2A97DF31007348D0 /* Task.swift in Sources */,
+				6660D4712A9CF81B00AA3847 /* Store.swift in Sources */,
+				6625A31F2A97DF31007348D0 /* PomodoroTask.swift in Sources */,
 				6625A3232A990949007348D0 /* CipollaTimerView.swift in Sources */,
 				6660D4672A9B9C3900AA3847 /* Banner.swift in Sources */,
 				662BC1D5286B670A00768B5C /* cipollaApp.swift in Sources */,
@@ -367,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -444,6 +452,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cipolla/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cipolla;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -476,6 +486,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = cipolla/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cipolla;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -505,7 +517,7 @@
 				662BC1DE286B670C00768B5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		662BC1DF286B670C00768B5C /* Build configuration list for PBXNativeTarget "cipolla" */ = {
 			isa = XCConfigurationList;
@@ -514,7 +526,7 @@
 				662BC1E1286B670C00768B5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

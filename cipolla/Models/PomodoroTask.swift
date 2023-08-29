@@ -1,6 +1,6 @@
 import Foundation
 
-struct Task: Hashable {
+struct PomodoroTask: Hashable {
     var name: String
     var isComplete: Bool
 }

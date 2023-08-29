@@ -22,7 +22,7 @@ private struct BannerVC: UIViewControllerRepresentable {
 }
 
 struct Banner: View {
-    var bannerID: String = "ca-app-pub-4186253562269967/9926608286"
+    var bannerID: String = "ca-app-pub-4186253562269967/4588599313"
     var testBannerID: String = "ca-app-pub-3940256099942544/6300978111"
     var width: CGFloat
 

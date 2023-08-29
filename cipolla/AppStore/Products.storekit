@@ -1,0 +1,35 @@
+{
+  "identifier" : "D20A5EE8",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6463642992",
+      "localizations" : [
+        {
+          "description" : "Removes all advertising within the app.",
+          "displayName" : "Remove Advertising",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "rdconcepts.removeAdvertising.cipolla",
+      "referenceName" : "remove-advertising",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "1466418424",
+    "_developerTeamID" : "6SFM579B5E",
+    "_lastSynchronizedDate" : 715014452.86919796
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

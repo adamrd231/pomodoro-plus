@@ -27,7 +27,7 @@ struct PomodoroTimermodel {
 class HomeViewModel: ObservableObject {
     @Published var pomodoroTimer = PomodoroTimermodel()
     @Published var backUpPomodoroTimer = PomodoroTimermodel()
-    @Published var taskList: [Task] = []
+    @Published var taskList: [PomodoroTask] = []
     @Published var newTask: String = ""
     let adsVM = AdsViewModel.shared
     
@@ -37,7 +37,7 @@ class HomeViewModel: ObservableObject {
     func addItemToTaskList() {
         guard newTask != "" else { return }
         // Create new Task
-        let new = Task(name: newTask, isComplete: false)
+        let new = PomodoroTask(name: newTask, isComplete: false)
         // Append item to list
         taskList.append(new)
         // clear our the input field
