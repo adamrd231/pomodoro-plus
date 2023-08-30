@@ -146,10 +146,10 @@
 		662BC1D3286B670A00768B5C /* cipolla */ = {
 			isa = PBXGroup;
 			children = (
-				6660D46A2A9CF5E100AA3847 /* AppStore */,
 				662BC1D4286B670A00768B5C /* cipollaApp.swift */,
 				6660D4642A9B9BFD00AA3847 /* Info.plist */,
 				662BC1D8286B670C00768B5C /* Assets.xcassets */,
+				6660D46A2A9CF5E100AA3847 /* AppStore */,
 				6625A3262A993B1A007348D0 /* Extensions */,
 				6660D4652A9B9C3200AA3847 /* Admob */,
 				6625A31A2A97DEBF007348D0 /* Components */,
@@ -461,7 +461,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = design.rdConcepts.cipolla;
+				PRODUCT_BUNDLE_IDENTIFIER = cipolla.rdconcepts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -495,7 +495,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = design.rdConcepts.cipolla;
+				PRODUCT_BUNDLE_IDENTIFIER = cipolla.rdconcepts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

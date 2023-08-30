@@ -122,9 +122,9 @@ struct CipollaTimerView: View {
                     }
                 }
             }
-            if !vm.inAppPurchases.contains(where: { $0.displayName == "Remove Advertising"}) {
-                Banner(width: UIScreen.main.bounds.width)
-            }
+//            if !vm.inAppPurchases.contains(where: { $0.displayName == "Remove Advertising"}) {
+//                Banner(width: UIScreen.main.bounds.width)
+//            }
         }
         .padding()
     }

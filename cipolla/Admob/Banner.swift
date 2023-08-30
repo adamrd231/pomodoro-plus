@@ -31,7 +31,7 @@ struct Banner: View {
     }
 
     var body: some View {
-        BannerVC(bannerID: testBannerID, width: width)
+        BannerVC(bannerID: bannerID, width: width)
             .frame(width: size.width, height: size.height)
     }
 }
