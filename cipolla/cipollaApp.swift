@@ -1,17 +1,14 @@
-//
-//  cipollaApp.swift
-//  cipolla
-//
-//  Created by Adam Reed on 6/28/22.
-//
-
 import SwiftUI
+import AppTrackingTransparency
 
 @main
 struct cipollaApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                    ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })
+                }
         }
     }
 }
