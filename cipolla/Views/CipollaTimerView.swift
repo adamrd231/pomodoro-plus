@@ -1,10 +1,3 @@
-//
-//  CipollaTimerView.swift
-//  cipolla
-//
-//  Created by Adam Reed on 8/25/23.
-//
-
 import SwiftUI
 
 struct CipollaTimerView: View {
