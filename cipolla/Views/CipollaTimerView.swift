@@ -2,7 +2,6 @@ import SwiftUI
 
 struct CipollaTimerView: View {
     @StateObject var vm: HomeViewModel
-//    @EnvironmentObject var vm: HomeViewModel
     @State var isShowingResetConfirmation: Bool = false
     
     var body: some View {
@@ -155,6 +154,5 @@ struct ListButton: ButtonStyle {
 struct CipollaTimerView_Previews: PreviewProvider {
     static var previews: some View {
         CipollaTimerView(vm: HomeViewModel())
-//            .environmentObject(HomeViewModel())
     }
 }
